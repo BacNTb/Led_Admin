@@ -33,19 +33,42 @@ class AdminsController extends Controller
 
     function create()
     {
-        if (isset($_POST["name"]))
-        {
-            $Admin= new AdminModel();
-            $Admin->setName($_POST["name"]);
-            $Admin->setUsername($_POST["username"]);
-            $Admin->setPassword($_POST["password"]);
-            $Admin->setEmail($_POST["email"]);
-            $Admin->setTell($_POST["tell"]);
-            $Admin->setCreate_at($_POST["create_at"]);
+        if (isset($_POST["name"])) {
+            
+            if (isset($_FILES["image"])) {
+                
+                // var_dump($_FILES["image"]);
+                
+                $fileUpload = $_SERVER['DOCUMENT_ROOT'] . '/admin/views/imgadmin/';
 
-            if ($this->AdminRepository->add($Admin))
-            {
-                header("Location: " . WEBROOT . "admins/admin");
+                // $file = $_FILES["image"]['name'];
+
+                // var_export($name);
+
+                // $name = implode($file);
+                // echo $name;
+
+                // if ($name == UPLOAD_ERR_OK) {
+
+                    $tmp_name = $_FILES["image"]["tmp_name"];
+                    $name = basename(implode($_FILES["image"]['name']));
+                    move_uploaded_file($tmp_name, "$fileUpload/$name");
+
+
+                    $Admin= new AdminModel();
+                    $Admin->setName($_POST["name"]);
+                    $Admin->setImg($name);
+                    $Admin->setUsername($_POST["username"]);
+                    $Admin->setPassword(sha1($_POST["password"]));
+                    $Admin->setEmail($_POST["email"]);
+                    $Admin->setTell($_POST["tell"]);
+                    $Admin->setCreate_at(date("Y-m-d h:i:s"));
+        
+                    if ($this->AdminRepository->add($Admin)) {
+        
+                        header("Location: " . WEBROOT . "admins/admin/");
+                    // }
+                }
             }
         }
 
@@ -61,10 +84,10 @@ class AdminsController extends Controller
         {
             $Admin->setName($_POST["name"]);
             $Admin->setUsername($_POST["username"]);
-            $Admin->setPassword($_POST["password"]);
+            $Admin->setPassword(sha1($_POST["password"]));
             $Admin->setEmail($_POST["email"]);
             $Admin->setTell($_POST["tell"]);
-            $Admin->setUpdate_at($_POST["update_at"]);
+            $Admin->setUpdate_at(date("Y-m-d h:i:s"));
 
             if ($this->AdminRepository->update($Admin))
             {
@@ -84,7 +107,7 @@ class AdminsController extends Controller
         $Admin->setId($id);
         if ($this->AdminRepository->delete($Admin))
         {
-            header("Location: " . WEBROOT . "admins/admin");
+            header("Location: " . WEBROOT . "admins/admin/");
         }
     }
 
@@ -92,7 +115,7 @@ class AdminsController extends Controller
     {
         if(isset($_POST['submit'])) {
             $repone = new AdminRepository();
-            $resuft =  $repone->check($_POST['username'], $_POST['password']);
+            $resuft =  $repone->check($_POST['username'], sha1($_POST['password']));
             if($resuft) {
                 $_SESSION['username'] = $resuft['username'];
                 $_SESSION['name'] = $resuft['name'];

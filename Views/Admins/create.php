@@ -3,10 +3,21 @@
     <div class="card-body">
         <a href="/admin/admins/admin/home" class="btn btn-info btn-sm" style="margin-bottom: 20px">Trở lại</a>
 
-        <form method='post' action='#'>
+        <form method='post' action='#' enctype="multipart/form-data">
             <div class="form-group">
                 <label for="title">Tên Admin</label>
                 <input type="text" class="form-control" id="name" placeholder="VD: Nguyễn Thế Bắc" name="name">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="image">Ảnh Admin</label>
+                    <input style="display: none;" type="file" id="image" class="custom-file-input" name="image[]">
+                    <label class="custom-file-lable" for="image">Chọn ảnh</label>
+                </div>
+                <div class="col-md-12" id="image_show">
+                
+                </div>
             </div>
 
             <div class="form-group">

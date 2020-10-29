@@ -97,7 +97,7 @@ class LedsController extends Controller
             $Led->setDescription($_POST["description"]);
             $Led->setPrice($_POST["price"]);
             $Led->setCategori_id($_POST["categori_id"]);
-            $Led->setCreate_at($_POST["create_at"]);
+            $Led->setCreate_at(date("Y-m-d h:i:s"));
 
             if ($this->LedRepository->add($Led)) {
                 $conn = new Database();
@@ -105,8 +105,6 @@ class LedsController extends Controller
                 $id = $conn->getBdd()->lastInsertId();
 
                 if (isset($_FILES["image"])) {
-
-                    var_export($_FILES["image"]);
                     
                     $fileUpload = $_SERVER['DOCUMENT_ROOT'] . '/admin/views/img/';
 
@@ -123,13 +121,13 @@ class LedsController extends Controller
 
                             $Img->setLed_id($id);
                             $Img->setName($name);
-                            $Img->setCreate_at($_POST["create_at"]);
+                            $Img->setCreate_at(date("Y-m-d h:i:s"));
 
                             $req->add($Img);
                         }
                     }
 
-                    // header("Location: " . WEBROOT . "leds/home");
+                    header("Location: " . WEBROOT . "leds/home/");
                 }
             }
         }
@@ -158,7 +156,7 @@ class LedsController extends Controller
             $Led->setName($_POST["name"]);
             $Led->setDescription($_POST["description"]);
             $Led->setPrice($_POST["price"]);
-            $Led->setUpdate_at($_POST["update_at"]);
+            $Led->setUpdate_at(date("Y-m-d h:i:s"));
 
             if ($this->LedRepository->update($Led)) {
 
@@ -179,8 +177,8 @@ class LedsController extends Controller
 
                         $Img->setLed_id($id);
                         $Img->setName($name);
-                        $Img->setCreate_at($_POST["create_at"]);
-                        $Img->setUpdate_at($_POST["update_at"]);
+                        $Img->setCreate_at(date("Y-m-d h:i:s"));
+                        $Img->setUpdate_at(date("Y-m-d h:i:s"));
 
                         $rep->update($Img);
                     }

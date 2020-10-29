@@ -102,8 +102,8 @@
                         </a>
                         <div id="collapseUtilitieskh" class="collapse" aria-labelledby="headingUtilitieskh" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
-                                <a class="collapse-item" href="/admin/admins/home/">Tất Cả</a>
-                                <a class="collapse-item" href="/admin/admins/admin/">Thông Tin Khách Hàng</a>
+                                <a class="collapse-item" href="/admin/custummers/cus/home">Tất Cả</a>
+                                <a class="collapse-item" href="/admin/custummers/cus/">Thông Tin Khách Hàng</a>
                             </div>
                         </div>
                     </li>

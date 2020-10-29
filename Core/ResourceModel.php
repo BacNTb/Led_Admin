@@ -87,7 +87,7 @@ class ResourceModel implements ResourceModelInterFace
             
             $req = Database::getBdd()->prepare($sql);
 
-            return $req->execute($newArr);
+            // return $req->execute($newArr);
         }
     }
 

@@ -38,7 +38,7 @@ class CategorisController extends Controller
             $Cate->setName($_POST["name"]);
             $Cate->setDescription($_POST["description"]);
             $Cate->setStatus($_POST["status"]);
-            $Cate->setCreate_at($_POST["create_at"]);
+            $Cate->setCreate_at(date("Y-m-d h:i:s"));
 
             if ($this->CateRepository->add($Cate))
             {
@@ -60,7 +60,7 @@ class CategorisController extends Controller
             $Cate->setName($_POST["name"]);
             $Cate->setDescription($_POST["description"]);
             $Cate->setStatus($_POST["status"]);
-            $Cate->setUpdate_at($_POST["update_at"]);
+            $Cate->setUpdate_at(date("Y-m-d h:i:s"));
 
             if ($this->CateRepository->update($Cate))
             {

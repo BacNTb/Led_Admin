@@ -3,17 +3,18 @@ namespace Mvc\Models;
 
 use Mvc\Core\Model;
 
-class AdminModel extends Model
+class CusModel extends Model
 {
     protected $id;
+    protected $led_id;
+    protected $count;
+    protected $price;
     protected $name;
-    protected $img;
-    protected $username;
-    protected $password;
-    protected $email;
-    protected $tell;
+    protected $address;
+    protected $tell;  
     protected $create_at;
     protected $update_at;
+
 
     /**
      * Get the value of id
@@ -31,6 +32,66 @@ class AdminModel extends Model
     public function setId($id)
     {
         $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of led_id
+     */ 
+    public function getLed_id()
+    {
+        return $this->led_id;
+    }
+
+    /**
+     * Set the value of led_id
+     *
+     * @return  self
+     */ 
+    public function setLed_id($led_id)
+    {
+        $this->led_id = $led_id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of count
+     */ 
+    public function getCount()
+    {
+        return $this->count;
+    }
+
+    /**
+     * Set the value of count
+     *
+     * @return  self
+     */ 
+    public function setCount($count)
+    {
+        $this->count = $count;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of price
+     */ 
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * Set the value of price
+     *
+     * @return  self
+     */ 
+    public function setPrice($price)
+    {
+        $this->price = $price;
 
         return $this;
     }
@@ -56,61 +117,21 @@ class AdminModel extends Model
     }
 
     /**
-     * Get the value of username
+     * Get the value of address
      */ 
-    public function getUsername()
+    public function getAddress()
     {
-        return $this->username;
+        return $this->address;
     }
 
     /**
-     * Set the value of username
+     * Set the value of address
      *
      * @return  self
      */ 
-    public function setUsername($username)
+    public function setAddress($address)
     {
-        $this->username = $username;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of password
-     */ 
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
-     * Set the value of password
-     *
-     * @return  self
-     */ 
-    public function setPassword($password)
-    {
-        $this->password = $password;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of email
-     */ 
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * Set the value of email
-     *
-     * @return  self
-     */ 
-    public function setEmail($email)
-    {
-        $this->email = $email;
+        $this->address = $address;
 
         return $this;
     }
@@ -135,6 +156,7 @@ class AdminModel extends Model
         return $this;
     }
 
+    
     /**
      * Get the value of create_at
      */ 
@@ -174,28 +196,9 @@ class AdminModel extends Model
     {
         date_default_timezone_set('Asia/Ho_Chi_Minh');
 
-        $this->update_at = date("Y-m-d h:i:s");;
+        $this->update_at = date("Y-m-d h:i:s");
 
         return $this;
     }
 
-    /**
-     * Get the value of img
-     */ 
-    public function getImg()
-    {
-        return $this->img;
-    }
-
-    /**
-     * Set the value of img
-     *
-     * @return  self
-     */ 
-    public function setImg($img)
-    {
-        $this->img = $img;
-
-        return $this;
-    }
 }

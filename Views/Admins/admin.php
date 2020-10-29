@@ -10,7 +10,6 @@
                     <th>ID</th>
                     <th>Tên admin</th>
                     <th>Tên đang nhập</th>
-                    <th>Mật khẩu</th>
                     <th>Email</th>
                     <th>Số điện thoại</th>
                     <th>Lựa chọn</th>
@@ -23,7 +22,6 @@
                         <td><?php echo $row['id']; ?></td>
                         <td><?php echo $row['name']; ?></td>
                         <td><?php echo $row['username']; ?></td>
-                        <td><?php echo $row['password']; ?></td>
                         <td><?php echo $row['email']; ?></td>
                         <td><?php echo $row['tell']; ?></td>
 
