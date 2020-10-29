@@ -106,6 +106,8 @@ class LedsController extends Controller
 
                 if (isset($_FILES["image"])) {
 
+                    var_export($_FILES["image"]);
+                    
                     $fileUpload = $_SERVER['DOCUMENT_ROOT'] . '/admin/views/img/';
 
                     $file = $_FILES["image"]['name'];
@@ -127,7 +129,7 @@ class LedsController extends Controller
                         }
                     }
 
-                    header("Location: " . WEBROOT . "leds/home");
+                    // header("Location: " . WEBROOT . "leds/home");
                 }
             }
         }

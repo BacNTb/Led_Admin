@@ -27,7 +27,7 @@
                     <label class="custom-file-lable" for="image">Chọn ảnh</label>
                 </div>
                 <div class="col-md-12" id="image_show">
-                    
+                
                 </div>
             </div>
 

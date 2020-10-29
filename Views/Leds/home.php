@@ -44,7 +44,7 @@
 
                                             <?php $img_name = $rowImg['name']; ?>
                                             <?php $img_id = $rowImg['led_id']; ?>
-                                            
+
                                             <div class="carousel-item active">
                                                 <img style="margin: 0 auto;" width="100px" src="/admin/Views/img/<?php echo $img_name; ?>" class="thumbnail" alt="<?php echo $img_name; ?>">
                                             </div>
