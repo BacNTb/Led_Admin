@@ -2,7 +2,7 @@
     <h5 class="card-header">Danh sách sản phẩm</h5>
     <div class="card-body">
         <div class="div-link">
-            <a href="/admin/leds/create/" class="btn btn-primary btn-xs">
+            <a href="/shop/admin/leds/create/" class="btn btn-primary btn-xs">
                 Thêm sản phẩm
             </a>
         </div>
@@ -12,7 +12,7 @@
                 <tr class="thead-light">
                     <th>ID</th>
                     <th>Danh mục</th>
-                    <th>Tên sản phẩm</th>
+                    <th style="width: 30%;">Tên sản phẩm</th>
                     <th style="width: 20%;">Ảnh sản phẩm</th>
                     <th>Giá sản phẩm</th>
                     <!-- <th>Thông tin sản phẩm</th> -->
@@ -37,32 +37,30 @@
                         <td><?php echo $rowLed['name']; ?></td>
 
                         <td>
-                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                                <div class="carousel-inner">
-                                <?php foreach ($img as $rowImg) { ?>
-                                        <?php if ($rowLed['id'] == $rowImg['led_id']) { ?>
+                            <?php $arrImg = []; ?>
+                            <?php foreach ($img as $key => $rowImg) { ?>
 
-                                            <?php $img_name = $rowImg['name']; ?>
-                                            <?php $img_id = $rowImg['led_id']; ?>
+                                <?php if ($rowLed['id'] == $rowImg['led_id']) { ?>
 
-                                            <div class="carousel-item active">
-                                                <img style="margin: 0 auto;" width="100px" src="/admin/Views/img/<?php echo $img_name; ?>" class="thumbnail" alt="<?php echo $img_name; ?>">
-                                            </div>
+                                <?php $arrImg[] = $rowImg['name']; ?>
 
-                                        <?php } ?>
-                                    <?php } ?>
-                                </div>
+                                <?php } ?>
+                            <?php } ?>
+
+                            <div class="carousel-inner-img">
+                                <img style="margin: 0 auto;" width="100px" src="/shop/admin/Views/img/<?php echo $arrImg['0']; ?>" alt="<?php echo $arrImg['0']; ?>">
+                               
                             </div>
                         </td>
 
                         <td><?php echo number_format($rowLed['price'], 0, ',', '.'); ?><sup>đ</sup></td>
                         <!-- <td style="width: 200px;"><?php //echo $rowLed['description']; ?></td> -->
                         <td class='text-center'>
-                            <a class='btn btn-outline-info btn-sm' href='/admin/leds/edit/<?php echo $rowLed["id"];?>'>
+                            <a class='btn btn-outline-info btn-sm' href='/shop/admin/leds/edit/<?php echo $rowLed["id"];?>'>
                                 <span class='glyphicon glyphicon-edit'></span>
                                 Sửa
                             </a>
-                            <a href='/admin/leds/delete/<?php echo $rowLed["id"]; ?>' class='btn btn-outline-danger btn-sm'>
+                            <a href='/shop/admin/leds/delete/<?php echo $rowLed["id"]; ?>' class='btn btn-outline-danger btn-sm'>
                                 <span class='glyphicon glyphicon-remove'></span>
                                 Xóa
                             </a>

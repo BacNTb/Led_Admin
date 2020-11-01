@@ -1,7 +1,7 @@
 <div class="card">
     <h5 class="card-header">Sửa Thông Tin Danh Mục</h5>
     <div class="card-body">
-        <a href="/admin/categoris/cate/" class="btn btn-info btn-sm" style="margin-bottom: 20px">Trở lại</a>
+        <a href="/shop/admin/categoris/cate/" class="btn btn-info btn-sm" style="margin-bottom: 20px">Trở lại</a>
 
         <form method='post' action='#'>
             <div class="form-group">

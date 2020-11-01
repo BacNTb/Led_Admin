@@ -1,19 +1,19 @@
 <div class="card">
     <h5 class="card-header">Sửa Thông Tin Đèn Led</h5>
     <div class="card-body">
-        <a href="http://localhost/admin/leds/home/" class="btn btn-info btn-sm" style="margin-bottom: 20px">Trở lại</a>
-        
+        <a href="/shop/admin/leds/home/" class="btn btn-info btn-sm" style="margin-bottom: 20px">Trở lại</a>
+
         <form method='post' action='#' enctype="multipart/form-data">
             <div class="form-group">
                 <label for="title">Danh mục sản phẩm</label>
                 <select class="custom-select" id="inputGroupSelect02" name="categori_id">
                     <?php foreach ($cate as $row) { ?>
-                        <?php if($Led['categori_id'] == $row['id']) { ?>
-                            <option selected  value="<?php echo $row['id']; ?>"><?php echo $row['name'];?></option>
+                        <?php if ($Led['categori_id'] == $row['id']) { ?>
+                            <option selected value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
                         <?php } ?>
 
-                        <?php if($Led['categori_id'] != $row['id']) { ?>
-                            <option value="<?php echo $row['id']; ?>"><?php echo $row['name'];?></option>
+                        <?php if ($Led['categori_id'] != $row['id']) { ?>
+                            <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
                         <?php } ?>
                     <?php } ?>
                 </select>
@@ -25,20 +25,22 @@
             </div>
 
             <div class="form-row">
-                <div class="form-group col-md-12">
-                    <label for="image">Ảnh sản phẩm</label>
-                    <input style="display: none;" multiple type="file" id="image" class="custom-file-input" name="image[]">
-                    <label class="custom-file-lable" for="image">Chọn ảnh</label>
-                </div>
-                <div class="col-md-12" id="image_show">
                 <?php foreach ($img as $rowImg) { ?>
-                    <?php if($Led['id'] == $rowImg['led_id']) { ?>
+                    <?php if ($Led['id'] == $rowImg['led_id']) { ?>
 
-                        <img style="margin: 0 auto;" width="100px" src="/admin/Views/img/<?php echo $rowImg['name']; ?>" class="thumbnail" alt="<?php echo $rowImg['name']; ?>">
-                    
+                        <div class="form-group col-md-12">
+                            <label for="image">Ảnh sản phẩm</label>
+                            <input style="display: none;" multiple type="file" id="image" class="custom-file-input" name="image[]">
+                            <label class="custom-file-lable" for="image"><?php echo $rowImg['name']; ?></label>
+                        </div>
+
+                        <div class="col-md-12" id="image_show">
+
+                            <img class="img_view" width="100px" src="/shop/admin/Views/img/<?php echo $rowImg['name']; ?>" class="thumbnail" alt="<?php echo $rowImg['name']; ?>">
+
+                        </div>
                     <?php } ?>
                 <?php } ?>
-                </div>
             </div>
 
             <div class="form-group">

@@ -1,7 +1,7 @@
 <div class="card">
     <h5 class="card-header">Thêm Admin</h5>
     <div class="card-body">
-        <a href="/admin/admins/admin/home" class="btn btn-info btn-sm" style="margin-bottom: 20px">Trở lại</a>
+        <a href="/shop/admin/admins/admin/home" class="btn btn-info btn-sm" style="margin-bottom: 20px">Trở lại</a>
 
         <form method='post' action='#' enctype="multipart/form-data">
             <div class="form-group">
@@ -40,8 +40,8 @@
                 <input type="tell" class="form-control" id="tell" placeholder="VD: 0977888999" name="tell">
             </div>
 
-            <button type="submit" class="btn btn-success">Thêm</button>
-            <button type="reset" class="btn btn-warning">Nhập lại</button>
+            <input type="submit" class="btn btn-success" value="Thêm">
+            <input type="reset" class="btn btn-warning" value="Nhập lại">
         </form>
     </div>
 </div>

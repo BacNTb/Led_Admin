@@ -6,7 +6,7 @@ use Mvc\request;
 
 use Mvc\Router;
 
-use Mvc\Controllers\tasksController;
+use Mvc\Controllers\AdminsController;
 
 class Dispatcher
 {
@@ -27,12 +27,10 @@ class Dispatcher
     public function loadController()
     {
         $name1 = $this->request->controller;
-        // $name = new Controllers\tasksController();
-        // $file = ROOT . 'Controllers/' . $name . '.php';
 
         $name = "\Mvc\Controllers\\" . $name1 . "Controller";
         $file = ROOT . 'Controllers/' . $name1 . 'Controller.php';
-
+        
         require($file);
         $controller = new $name();
         return $controller;

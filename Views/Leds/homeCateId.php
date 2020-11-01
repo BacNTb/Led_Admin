@@ -11,7 +11,7 @@
         <div class="row">
             <?php foreach ($cate as $row) { ?>
                 <div class="col-md-3 mt-3">
-                    <a href="/admin/leds/homecateid/<?php echo $row['id']; ?>" class="btn btn-outline-info btn-xs w-100">
+                    <a href="/shop/admin/leds/homecateid/<?php echo $row['id']; ?>" class="btn btn-outline-info btn-xs w-100">
                         <?php echo $row['name']; ?>
                     </a>
                 </div>
@@ -51,21 +51,19 @@
                             <td><?php echo $rowLed['name']; ?></td>
 
                             <td>
-                                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                                    <div class="carousel-inner">
-                                        <?php foreach ($img as $rowImg) { ?>
-                                            <?php if ($rowLed['id'] == $rowImg['led_id']) { ?>
+                                <?php $arrImg = []; ?>
+                                <?php foreach ($img as $key => $rowImg) { ?>
 
-                                                <?php $img_name = $rowImg['name']; ?>
-                                                <?php $img_id = $rowImg['led_id']; ?>
+                                    <?php if ($rowLed['id'] == $rowImg['led_id']) { ?>
 
-                                                <div class="carousel-item active">
-                                                    <img style="margin: 0 auto;" width="100px" src="/admin/Views/img/<?php echo $img_name; ?>" class="thumbnail" alt="<?php echo $img_name; ?>">
-                                                </div>
+                                    <?php $arrImg[] = $rowImg['name']; ?>
 
-                                            <?php } ?>
-                                        <?php } ?>
-                                    </div>
+                                    <?php } ?>
+                                <?php } ?>
+
+                                <div class="carousel-inner-img">
+                                    <img style="margin: 0 auto; width: 100px; height: 100px; object-fit: cover;" src="/shop/admin/Views/img/<?php echo $arrImg['0']; ?>" alt="<?php echo $arrImg['0']; ?>">
+                                
                                 </div>
                             </td>
 
@@ -73,11 +71,11 @@
                             <!-- <td style="width: 200px;"><?php //echo $rowLed['description']; 
                                                             ?></td> -->
                             <td class='text-center'>
-                                <a class='btn btn-outline-info btn-sm' href='/admin/leds/edit/<?php echo $rowLed["id"]; ?>'>
+                                <a class='btn btn-outline-info btn-sm' href='/shop/admin/leds/edit/<?php echo $rowLed["id"]; ?>'>
                                     <span class='glyphicon glyphicon-edit'></span>
                                     Sửa
                                 </a>
-                                <a href='/admin/leds/delete/<?php echo $rowLed["id"]; ?>' class='btn btn-outline-danger btn-sm'>
+                                <a href='/shop/admin/leds/delete/<?php echo $rowLed["id"]; ?>' class='btn btn-outline-danger btn-sm'>
                                     <span class='glyphicon glyphicon-remove'></span>
                                     Xóa
                                 </a>

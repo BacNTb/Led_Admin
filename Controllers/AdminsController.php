@@ -36,24 +36,20 @@ class AdminsController extends Controller
         if (isset($_POST["name"])) {
             
             if (isset($_FILES["image"])) {
-                
-                // var_dump($_FILES["image"]);
-                
-                $fileUpload = $_SERVER['DOCUMENT_ROOT'] . '/admin/views/imgadmin/';
+                                
+                $fileUpload = $_SERVER['DOCUMENT_ROOT'] . '/shop/admin/views/imgadmin/';
 
-                // $file = $_FILES["image"]['name'];
+                $file = $_FILES["image"]['name'];
+                $tmp = $_FILES["image"]["tmp_name"];
 
-                // var_export($name);
+                $filename = implode($file);
+                $tmp_name = implode($tmp);
 
-                // $name = implode($file);
-                // echo $name;
+                if ($filename == UPLOAD_ERR_OK) {
 
-                // if ($name == UPLOAD_ERR_OK) {
-
-                    $tmp_name = $_FILES["image"]["tmp_name"];
-                    $name = basename(implode($_FILES["image"]['name']));
+                    $tmp_name = $tmp_name;
+                    $name = basename($filename);
                     move_uploaded_file($tmp_name, "$fileUpload/$name");
-
 
                     $Admin= new AdminModel();
                     $Admin->setName($_POST["name"]);
@@ -67,8 +63,10 @@ class AdminsController extends Controller
                     if ($this->AdminRepository->add($Admin)) {
         
                         header("Location: " . WEBROOT . "admins/admin/");
-                    // }
+                    }
                 }
+            } else {
+
             }
         }
 
@@ -119,8 +117,9 @@ class AdminsController extends Controller
             if($resuft) {
                 $_SESSION['username'] = $resuft['username'];
                 $_SESSION['name'] = $resuft['name'];
+                $_SESSION['img'] = $resuft['img'];
                 
-                header('Location: /admin/leds/index');
+                header('Location: /shop/admin/leds/index');
             }
             
         }

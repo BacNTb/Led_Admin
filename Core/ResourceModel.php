@@ -25,7 +25,6 @@ class ResourceModel implements ResourceModelInterFace
         $table = $this->table;
         $arr = $model->getProperties();
 
-        echo $table . '</br>';
         $newArr = [];
         
         if ($id) {
@@ -58,10 +57,6 @@ class ResourceModel implements ResourceModelInterFace
                 $sql = "UPDATE $this->table SET $trimValues WHERE id = $id";            
             }
 
-            echo $sql;
-            echo '<pre>';
-            var_export($arr);
-
             $req = Database::getBdd()->prepare($sql);
 
             return $req->execute($newArr);
@@ -82,12 +77,10 @@ class ResourceModel implements ResourceModelInterFace
             $trimValues = trim($values, ",");
 
             $sql = "INSERT INTO $this->table ($trimKeys) VALUES ($trimValues)";
-            
-            echo $sql;
-            
+                        
             $req = Database::getBdd()->prepare($sql);
 
-            // return $req->execute($newArr);
+            return $req->execute($newArr);
         }
     }
 

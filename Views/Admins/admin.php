@@ -1,9 +1,7 @@
 <div class="card">
     <h5 class="card-header">Danh sách Admin</h5>
     <div class="card-body">
-        <!-- <a href="/admin/admins/create/" class="btn btn-primary btn-xs">
-            Thêm Admin
-        </a> -->
+        <a href="/shop/admin/admins/admin/home" class="btn btn-info btn-sm">Trở lại</a>
         <table class="table table-hover table-product table-product mt-3 text-center">
             <thead>
                 <tr class="thead-light">
@@ -26,11 +24,11 @@
                         <td><?php echo $row['tell']; ?></td>
 
                         <td class='text-center'>
-                            <a class='btn btn-outline-info btn-sm' href='/admin/admins/edit/<?php echo $row["id"]; ?>'>
+                            <a class='btn btn-outline-info btn-sm' href='/shop/admin/admins/edit/<?php echo $row["id"]; ?>'>
                                 <span class='glyphicon glyphicon-edit'></span>
                                 Sửa
                             </a>
-                            <a href='/admin/admins/delete/<?php echo $row["id"]; ?>' class='btn btn-outline-danger btn-sm'>
+                            <a href='/shop/admin/admins/delete/<?php echo $row["id"]; ?>' class='btn btn-outline-danger btn-sm'>
                                 <span class='glyphicon glyphicon-remove'></span>
                                 Xóa
                             </a>

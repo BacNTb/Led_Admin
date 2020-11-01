@@ -42,7 +42,7 @@ class CategorisController extends Controller
 
             if ($this->CateRepository->add($Cate))
             {
-                header("Location: " . WEBROOT . "categoris/cate");
+                header("Location: " . WEBROOT . "categoris/cate/home");
             }
         }
 
@@ -80,7 +80,7 @@ class CategorisController extends Controller
         $Cate->setId($id);
         if ($this->CateRepository->delete($Cate))
         {
-            header("Location: " . WEBROOT . "categoris/cate");
+            header("Location: " . WEBROOT . "categoris/cate/");
         }
     }
 }

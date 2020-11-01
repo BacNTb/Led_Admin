@@ -1,5 +1,4 @@
 <?php
-
 namespace Mvc\Controllers;
 
 use Mvc\Config\Database;
@@ -106,17 +105,21 @@ class LedsController extends Controller
 
                 if (isset($_FILES["image"])) {
                     
-                    $fileUpload = $_SERVER['DOCUMENT_ROOT'] . '/admin/views/img/';
+                    $fileUploadAdmin = $_SERVER['DOCUMENT_ROOT'] . '/shop/admin/views/img/';
+                    $fileUploadShop = $_SERVER['DOCUMENT_ROOT'] . '/shop/bshop/views/layouts/img/product/';
 
                     $file = $_FILES["image"]['name'];
-
+   
                     foreach ($file as $key => $name) {
-
+                        
                         if ($name == UPLOAD_ERR_OK) {
-
+                            
                             $tmp_name = $_FILES["image"]["tmp_name"][$key];
                             $name = basename($_FILES["image"]["name"][$key]);
-                            move_uploaded_file($tmp_name, "$fileUpload/$name");
+
+                            move_uploaded_file($tmp_name, "$fileUploadAdmin/$name");
+                     
+                            copy($fileUploadAdmin . '/' . $name, $fileUploadShop . '/' . $name);
 
 
                             $Img->setLed_id($id);
@@ -159,32 +162,38 @@ class LedsController extends Controller
             $Led->setUpdate_at(date("Y-m-d h:i:s"));
 
             if ($this->LedRepository->update($Led)) {
+           
+                if (isset($_FILES["image"])) {
 
-                $rep->deleteImg($Img);
+                    $rep->deleteImg($Img);
+                    
+                    $fileUploadAdmin = $_SERVER['DOCUMENT_ROOT'] . '/shop/admin/views/img/';
+                    $fileUploadShop = $_SERVER['DOCUMENT_ROOT'] . '/shop/bshop/views/layouts/img/product/';
 
-                $fileUpload = $_SERVER['DOCUMENT_ROOT'] . '/admin/views/img/';
+                    $file = $_FILES["image"]['name'];
+   
+                    foreach ($file as $key => $name) {
+                        
+                        if ($name == UPLOAD_ERR_OK) {
+                            
+                            $tmp_name = $_FILES["image"]["tmp_name"][$key];
+                            $name = basename($_FILES["image"]["name"][$key]);
 
-                $file = $_FILES["image"]['name'];
-
-                foreach ($file as $key => $name) {
-
-                    if ($name == UPLOAD_ERR_OK) {
-
-                        $tmp_name = $_FILES["image"]["tmp_name"][$key];
-                        $name = basename($_FILES["image"]["name"][$key]);
-                        move_uploaded_file($tmp_name, "$fileUpload/$name");
+                            move_uploaded_file($tmp_name, "$fileUploadAdmin/$name");
+                     
+                            copy($fileUploadAdmin . '/' . $name, $fileUploadShop . '/' . $name);
 
 
-                        $Img->setLed_id($id);
-                        $Img->setName($name);
-                        $Img->setCreate_at(date("Y-m-d h:i:s"));
-                        $Img->setUpdate_at(date("Y-m-d h:i:s"));
+                            $Img->setLed_id($id);
+                            $Img->setName($name);
+                            $Img->setCreate_at(date("Y-m-d h:i:s"));
 
-                        $rep->update($Img);
+                            $rep->add($Img);
+                        }
                     }
-                }
 
-                header("Location: " . WEBROOT . "leds/home");
+                    header("Location: " . WEBROOT . "leds/home/");
+                }
             }
         }
 

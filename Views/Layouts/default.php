@@ -7,12 +7,13 @@
     <title>Trang quản trị | Admin</title>
 
     <!-- Custom fonts for this template-->
-    <link href="/admin/views/layouts/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/shop/admin/views/layouts/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    
-    <link href="/admin/views/layouts/css/sb-admin-2.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link href="/shop/admin/views/layouts/css/sb-admin-2.css" rel="stylesheet">
+    <!-- <link href="/shop/admin/views/layouts/css/default.css" rel="stylesheet"> -->
 
     <style>
         table tr th {
@@ -24,8 +25,9 @@
         .img_view {
             width: 100px;
             object-fit: cover;
+            margin: 0 15px 15px 0;
+            height: 100px;
         }
-
     </style>
 
 </head>
@@ -38,7 +40,7 @@
                 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion position-fixed" id="accordionSidebar" style="    background-image: linear-gradient(45deg, #711f45, #2e83dad6);">
 
                     <!-- Sidebar - Brand -->
-                    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/">
+                    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/shop/admin/">
                         <div class="sidebar-brand-icon rotate-n-15 mr-3">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
@@ -61,8 +63,8 @@
                         </a>
                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
-                                <a class="collapse-item" href="/admin/categoris/cate/home">Tất cả</a>
-                                <a class="collapse-item" href="/admin/categoris/cate/">Thông Tin Danh Mục</a>
+                                <a class="collapse-item" href="/shop/admin/categoris/cate/home">Tất cả</a>
+                                <a class="collapse-item" href="/shop/admin/categoris/cate/">Thông Tin Danh Mục</a>
                             </div>
                         </div>
                     </li>
@@ -70,13 +72,13 @@
                     <!-- Nav Item - Utilities Collapse Menu -->
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                            <i class="fab fa-product-hunt"></i>     
+                            <i class="fab fa-product-hunt"></i>
                             <span>Sản phẩm</span>
                         </a>
                         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
-                                <a class="collapse-item" href="/admin/leds/home/">Tất cả</a>
-                                <a class="collapse-item" href="/admin/leds/homeCateId/">Xem Theo Danh Mục</a>
+                                <a class="collapse-item" href="/shop/admin/leds/home/">Tất cả</a>
+                                <a class="collapse-item" href="/shop/admin/leds/homeCateId/">Xem Theo Danh Mục</a>
                             </div>
                         </div>
                     </li>
@@ -84,13 +86,13 @@
                     <!-- Nav Item - Utilities Collapse Menu -->
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilitiesx" aria-expanded="true" aria-controls="collapseUtilitiesx">
-                            <i class="fas fa-user-lock"></i>                            
+                            <i class="fas fa-user-lock"></i>
                             <span>Admin</span>
                         </a>
                         <div id="collapseUtilitiesx" class="collapse" aria-labelledby="headingUtilitiesx" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
-                                <a class="collapse-item" href="/admin/admins/admin/home">Tất Cả</a>
-                                <a class="collapse-item" href="/admin/admins/admin/">Thông Tin Admin</a>
+                                <a class="collapse-item" href="/shop/admin/admins/admin/home">Tất Cả</a>
+                                <a class="collapse-item" href="/shop/admin/admins/admin/">Thông Tin Admin</a>
                             </div>
                         </div>
                     </li>
@@ -102,8 +104,8 @@
                         </a>
                         <div id="collapseUtilitieskh" class="collapse" aria-labelledby="headingUtilitieskh" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
-                                <a class="collapse-item" href="/admin/custummers/cus/home">Tất Cả</a>
-                                <a class="collapse-item" href="/admin/custummers/cus/">Thông Tin Khách Hàng</a>
+                                <a class="collapse-item" href="/shop/admin/custummers/cus/home">Tất Cả</a>
+                                <a class="collapse-item" href="/shop/admin/custummers/cus/">Thông Tin Khách Hàng</a>
                             </div>
                         </div>
                     </li>
@@ -274,10 +276,11 @@
                             <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php if (isset($_SESSION['username'])) {
-                                                                                                    echo $_SESSION['name'];
-                                                                                                } ?></span>
-                                    <img class="img-profile rounded-circle" src="/admin/views/img/a.jpg">
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                                        <?php if (isset($_SESSION['username'])) {
+                                            echo $_SESSION['name'];
+                                        } ?></span>
+                                    <img class="img-profile rounded-circle" src="/shop/admin/views/imgadmin/<?php if (isset($_SESSION['username'])) {echo $_SESSION['img'];} ?>">
                                 </a>
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -294,7 +297,7 @@
                                         Activity Log
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/admin/admins/login/out">
+                                    <a class="dropdown-item" href="/shop/admin/admins/login/out">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Đăng Xuất
                                     </a>
@@ -319,7 +322,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
     <!-- JS Only  -->
-    <script src="/admin/views/layouts/js/js.js"></script>
+    <script src="/shop/admin/views/layouts/js/js.js"></script>
     <script src="https://kit.fontawesome.com/yourcode.js"></script>
 
 </body>

@@ -20,15 +20,15 @@
             <?php foreach ($cate as $row) { ?>
                 <tr>
                     <td><?php echo $row['id']; ?></td>
-                    <td><a style="border-radius:5px;" href="/admin/leds/homecateid/<?php echo $row['id']; ?>" class="list-group-item list-group-item-action"><?php echo $row['name']; ?></a></td>
+                    <td><a style="border-radius:5px; border: none;" href="/shop/admin/leds/homecateid/<?php echo $row['id']; ?>" class="list-group-item list-group-item-action"><?php echo $row['name']; ?></a></td>
                     <td><?php echo $row['description']; ?></td>
                     <td><?php echo $row['status']; ?></td>
                     <td class='text-center'>
-                        <a class='btn btn-outline-info btn-sm' href='/admin/categoris/edit/<?php echo $row["id"];?>' >
+                        <a class='btn btn-outline-info btn-sm' href='/shop/admin/categoris/edit/<?php echo $row["id"];?>' >
                             <span class='glyphicon glyphicon-edit'></span> 
                             Sửa
                         </a> 
-                        <a href='/admin/categoris/delete/<?php echo $row["id"];?>' class='btn btn-outline-danger btn-sm'>
+                        <a href='/shop/admin/categoris/delete/<?php echo $row["id"];?>' class='btn btn-outline-danger btn-sm'>
                             <span class='glyphicon glyphicon-remove'></span> 
                             Xóa
                         </a>

@@ -2,7 +2,7 @@
 <div class="card">
     <h5 class="card-header">Thêm Đèn Led</h5>
     <div class="card-body">
-        <a href="/admin/leds/home/" class="btn btn-info btn-sm" style="margin-bottom: 20px;">Trở lại</a>
+        <a href="/shop/admin/leds/home/" class="btn btn-info btn-sm" style="margin-bottom: 20px;">Trở lại</a>
 
         <form method='post' action='#' enctype="multipart/form-data">
             <div class="form-group">

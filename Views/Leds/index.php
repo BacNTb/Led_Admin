@@ -4,7 +4,7 @@
 
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
-                <a href="/admin/categoris/cate/home" class="card-body">
+                <a href="/shop/admin/categoris/cate/home" class="card-body">
                     <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Danh Mục</div>
@@ -20,7 +20,7 @@
 
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
-                <a href="/admin/leds/home/" class="card-body">
+                <a href="/shop/admin/leds/home/" class="card-body">
                     <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Sản Phẩm</div>
@@ -36,7 +36,7 @@
 
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
-                <a href="/admin/admins/admin/home" class="card-body">
+                <a href="/shop/admin/admins/admin/home" class="card-body">
                     <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Admin</div>
@@ -52,7 +52,7 @@
 
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
-                <a href="/admin/" class="card-body">
+                <a href="/shop/admin/" class="card-body">
                     <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Khách Hàng</div>
