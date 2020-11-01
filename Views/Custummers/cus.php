@@ -16,11 +16,12 @@
                 <?php foreach ($cus as $row) { ?>
                     <tr>
                         <td><?php echo $row['id']; ?></td>
-                        <td><?php echo $row['name']; ?></td>
+                        <td>
+                            <a style="border-radius:5px; border: none;" href="/shop/admin/custummers/cus/<?php echo $row['id']; ?>" class="list-group-item list-group-item-action"><?php echo $row['name']; ?></a>    
+                        </td>
                         <td><?php echo $row['address']; ?></td>
                         <td><?php echo $row['email']; ?></td>
-                        <td><?php echo $row['tell']; ?></td>
-
+                        <td>0<?php echo $row['tell']; ?></td>
                     </tr>
                 <?php } ?>
             </tbody>

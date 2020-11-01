@@ -104,8 +104,8 @@
                         </a>
                         <div id="collapseUtilitieskh" class="collapse" aria-labelledby="headingUtilitieskh" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
-                                <a class="collapse-item" href="/shop/admin/custummers/cus/home">Tất Cả</a>
-                                <a class="collapse-item" href="/shop/admin/custummers/cus/">Thông Tin Khách Hàng</a>
+                                <a class="collapse-item" href="/shop/admin/custummers/home/home">Tất Cả</a>
+                                <a class="collapse-item" href="/shop/admin/custummers/home/">Thông Tin Khách Hàng</a>
                             </div>
                         </div>
                     </li>
@@ -119,7 +119,7 @@
                     </div>
 
                 </ul>
-                <!-- End of Sidebar -->>
+                <!-- End of Sidebar -->
             </div>
 
             <div class="col-md-10 conten-nav position-relative">

@@ -21,7 +21,7 @@
                         <td><?php echo $row['name']; ?></td>
                         <td><?php echo $row['username']; ?></td>
                         <td><?php echo $row['email']; ?></td>
-                        <td><?php echo $row['tell']; ?></td>
+                        <td>0<?php echo $row['tell']; ?></td>
 
                         <td class='text-center'>
                             <a class='btn btn-outline-info btn-sm' href='/shop/admin/admins/edit/<?php echo $row["id"]; ?>'>

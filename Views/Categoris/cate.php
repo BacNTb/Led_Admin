@@ -20,7 +20,9 @@
             <?php foreach ($cate as $row) { ?>
                 <tr>
                     <td><?php echo $row['id']; ?></td>
-                    <td><a style="border-radius:5px; border: none;" href="/shop/admin/leds/homecateid/<?php echo $row['id']; ?>" class="list-group-item list-group-item-action"><?php echo $row['name']; ?></a></td>
+                    <td>
+                        <a style="border-radius:5px; border: none;" href="/shop/admin/leds/homecateid/<?php echo $row['id']; ?>" class="list-group-item list-group-item-action"><?php echo $row['name']; ?></a>
+                    </td>
                     <td><?php echo $row['description']; ?></td>
                     <td><?php echo $row['status']; ?></td>
                     <td class='text-center'>

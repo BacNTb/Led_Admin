@@ -1,7 +1,7 @@
 <div class="card">
-    <h5 class="card-header">Sửa Thông Tin Admin</h5>
+    <h5 class="card-header">Sửa Thông Tin Admin  -  <?php if (isset($Admin["name"])) echo $Admin["name"]; ?></h5>
     <div class="card-body">
-        <a href="/admin/admins/admin/" class="btn btn-info btn-sm" style="margin-bottom: 20px">Trở lại</a>
+        <a href="/shop/admin/admins/admin/" class="btn btn-info btn-sm" style="margin-bottom: 20px">Trở lại</a>
 
         <form method='post' action='#'>
             <div class="form-group">

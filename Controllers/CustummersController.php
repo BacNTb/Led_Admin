@@ -3,26 +3,56 @@ namespace Mvc\Controllers;
 
 use Mvc\Core\Controller;
 
-use Mvc\Models\CusModel;
+use Mvc\Models\CheckoutModel;
+use Mvc\Models\CheckoutRepository;
+use Mvc\Models\CustommerModel;
 
-use Mvc\Models\CusRepository;
+use Mvc\Models\CustommerRepository;
 
 class CustummersController extends Controller
 {
 
-    private $CusRepository;
+    private $CustommerRepository;
 
     public function __construct(){
-        $this->CusRepository = new CusRepository();
+        $this->CustommerRepository = new CustommerRepository();
     }
 
-    function cus($page)
+    function cus($id)
     {
-        $newCus = new CusModel();
-        $d['cus'] = $this->CusRepository->showAll($newCus);
+        $Cus = new CustommerModel();
+        // $Cus->setId($id);
+
+        $d['cus'] = $this->CustommerRepository->getId($id);
         $this->set($d);
 
-        // var_export($d['cus']);
+        $Check = new CheckoutModel();
+        $rep = new CheckoutRepository();
+        $d['check'] = [];
+
+        $arrCheck = $rep->showAll();
+
+        foreach ($arrCheck as $key => $value) {
+            if($value['cus_id'] == $id) {
+                $d['check'][$key] = $value;
+            } 
+        }
+        $this->set($d);
+   
+        $this->render("cusdetails");   
+    }
+
+    function home($page)
+    {
+        $Cus = new CustommerModel();
+        $d['cus'] = $this->CustommerRepository->showAll($Cus);
+        $this->set($d);
+
+        $Check = new CheckoutModel();
+        $rep = new CheckoutRepository();
+        $d['check'] = $rep->showAll();
+
+        $this->set($d);
 
         if($page == 'home') {
             $this->render("home");
@@ -35,9 +65,9 @@ class CustummersController extends Controller
 
     function delete($id)
     {
-        $Cus = new CusModel();
+        $Cus = new CustommerModel();
         $Cus->setId($id);
-        if ($this->CusRepository->delete($Cus))
+        if ($this->CustommerRepository->delete($Cus))
         {
             header("Location: " . WEBROOT . "custummers/cus");
         }

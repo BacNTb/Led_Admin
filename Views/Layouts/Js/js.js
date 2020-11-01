@@ -1,8 +1,3 @@
-// $( ".menu-nav" ).click(function() {
-//     $('.menu-nav').removeClass('active');
-//     $(this).addClass('active');
-//     // $(this).toggleClass( "active" );
-// });
 
 var fileName = '';
 $('input[type="file"]').change(function (e) {
@@ -18,3 +13,22 @@ $('input[type="file"]').change(function (e) {
     }
     $('.custom-file-lable').html(fileName);
 });
+
+
+function xoaAdmin() {
+    var conf = confirm("Bạn có chắc chắn muốn xóa người dùng này hay không ?");
+    return conf;
+}
+
+function xoaDanhmuc() {
+    var conf = confirm("Bạn có chắc chắn muốn xóa danh mục này hay không ?");
+    return conf;
+}
+
+function xoaSanpham() {
+    var conf = confirm("Bạn có chắc chắn muốn xóa sản phẩm này hay không ?");
+    return conf;
+}
+
+
+

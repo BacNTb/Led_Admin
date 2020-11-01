@@ -138,20 +138,6 @@ class ResourceModel implements ResourceModelInterFace
         }
     }
 
-    // public function getCateId() {
-
-    //     $categori_id = $this->getCateId();
-
-    //     $sql =  "SELECT * FROM $this->table WHERE categori_id = $categori_id";
-
-    //     $req = Database::getBdd()->prepare($sql);
-
-    //     echo $sql;
-    //     if($req->execute()) {
-    //         return  $req->fetch();
-    //     }
-    // }
-
     public function checkLogin($username, $password) {
         
         $sql =  "SELECT * FROM $this->table WHERE username = '$username' and password = '$password'";

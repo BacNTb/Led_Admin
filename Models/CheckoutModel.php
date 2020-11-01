@@ -3,15 +3,14 @@ namespace Mvc\Models;
 
 use Mvc\Core\Model;
 
-class CusModel extends Model
+class CheckoutModel extends Model
 {
     protected $id;
     protected $led_id;
+    protected $cus_id;
     protected $count;
     protected $price;
-    protected $name;
-    protected $address;
-    protected $tell;  
+    protected $total_price;
     protected $create_at;
     protected $update_at;
 
@@ -57,6 +56,26 @@ class CusModel extends Model
     }
 
     /**
+     * Get the value of cus_id
+     */ 
+    public function getCus_id()
+    {
+        return $this->cus_id;
+    }
+
+    /**
+     * Set the value of cus_id
+     *
+     * @return  self
+     */ 
+    public function setCus_id($cus_id)
+    {
+        $this->cus_id = $cus_id;
+
+        return $this;
+    }
+
+    /**
      * Get the value of count
      */ 
     public function getCount()
@@ -97,61 +116,21 @@ class CusModel extends Model
     }
 
     /**
-     * Get the value of name
+     * Get the value of total_price
      */ 
-    public function getName()
+    public function getTotal_price()
     {
-        return $this->name;
+        return $this->total_price;
     }
 
     /**
-     * Set the value of name
+     * Set the value of total_price
      *
      * @return  self
      */ 
-    public function setName($name)
+    public function setTotal_price($total_price)
     {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of address
-     */ 
-    public function getAddress()
-    {
-        return $this->address;
-    }
-
-    /**
-     * Set the value of address
-     *
-     * @return  self
-     */ 
-    public function setAddress($address)
-    {
-        $this->address = $address;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of tell
-     */ 
-    public function getTell()
-    {
-        return $this->tell;
-    }
-
-    /**
-     * Set the value of tell
-     *
-     * @return  self
-     */ 
-    public function setTell($tell)
-    {
-        $this->tell = $tell;
+        $this->total_price = $total_price;
 
         return $this;
     }
