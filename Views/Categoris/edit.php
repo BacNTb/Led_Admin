@@ -19,8 +19,7 @@
                 <input type="number" min="0" max="1" class="form-control" id="status" name="status" value="<?php if (isset($Cate["status"])) echo $Cate["status"]; ?>">
             </div>
 
-            <button type="submit" class="btn btn-success">Lưu</button>
-            <button type="reset" class="btn btn-warning">Nhập lại</button>
+            <button style="width: 120px;" type="submit" class="btn btn-primary">Lưu</button>
         </form>
     </div>
 </div>

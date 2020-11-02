@@ -4,7 +4,8 @@ namespace Mvc\Controllers;
 use Mvc\Config\Database;
 
 use Mvc\Core\Controller;
-
+use Mvc\Models\AdminModel;
+use Mvc\Models\AdminRepository;
 use Mvc\Models\LedModel;
 
 use Mvc\Models\LedRepository;
@@ -12,7 +13,8 @@ use Mvc\Models\LedRepository;
 use Mvc\Models\CateModel;
 
 use Mvc\Models\CateRepository;
-
+use Mvc\Models\CustommerModel;
+use Mvc\Models\CustommerRepository;
 use Mvc\Models\ImgModel;
 
 use Mvc\Models\ImgRepository;
@@ -29,6 +31,25 @@ class LedsController extends Controller
 
     function index()
     {
+        $newLed = new LedModel();
+        $d['led'] = $this->LedRepository->showAll($newLed);
+        $this->set($d);
+
+        $newCate = new CateModel();
+        $rep = new CateRepository();
+        $d['cate'] = $rep->showAll($newCate);;
+        $this->set($d);
+
+        $newAdmin = new AdminModel();
+        $rep = new AdminRepository();
+        $d['admin'] = $rep->showAll($newCate);;
+        $this->set($d);
+
+        $newCate = new CustommerModel();
+        $rep = new CustommerRepository();
+        $d['cus'] = $rep->showAll($newCate);;
+        $this->set($d);
+
         $this->render("index");
     }
 

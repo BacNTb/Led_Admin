@@ -40,8 +40,8 @@
                 <label for="description">Giá sản phẩm</label>
                 <input type="text" class="form-control" id="price" placeholder="20090000" name="price">
             </div>
-            <button type="submit" class="btn btn-success">Thêm</button>
-            <button type="reset" class="btn btn-warning">Nhập lại</button>
+            <button style="width: 120px;" type="submit" class="btn btn-primary">Thêm</button>
+            <button style="width: 120px;" type="reset" class="btn btn-warning">Nhập lại</button>
         </form>
     </div>
 </div>

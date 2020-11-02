@@ -12,16 +12,16 @@
                         <?php echo $rowCus['name'];?>
                         </a>
                         <span class="badge badge-primary badge-pill">
-                        <?php foreach ($check as $rowCheck) { ?>                  
-                            <?php if($rowCus['id'] == $rowCheck['cus_id']) { ?>
-                      
-                                <?php $total_priceAll += $rowCheck['total_price'];?>                
-                                <?php echo number_format($total_priceAll, 0, ',', '.'); ?><sup>đ</sup>
-                            <?php } ?>
-                            
-
                             <?php $total_priceAll = 0;?>
-                        <?php } ?>
+                            <?php foreach ($check as $rowCheck) {
+                                    if($rowCheck['cus_id'] == $rowCus['id']) {
+
+                                        $total_priceAll += $rowCheck['total_price'];
+                                    }
+                                } 
+                            ?>
+
+                            <?php echo number_format($total_priceAll, 0, ',', '.'); ?><sup>đ</sup>
                         </span>
                     </li>     
             <?php } ?>

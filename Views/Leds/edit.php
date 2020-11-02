@@ -25,22 +25,23 @@
             </div>
 
             <div class="form-row">
-                <?php foreach ($img as $rowImg) { ?>
+                <div class="form-group col-md-12">
+                    <label for="image">Ảnh sản phẩm</label>
+                    <input style="display: none;" multiple type="file" id="image" class="custom-file-input" name="image[]">
+                    <?php foreach ($img as $rowImg) { ?>
                     <?php if ($Led['id'] == $rowImg['led_id']) { ?>
-
-                        <div class="form-group col-md-12">
-                            <label for="image">Ảnh sản phẩm</label>
-                            <input style="display: none;" multiple type="file" id="image" class="custom-file-input" name="image[]">
-                            <label class="custom-file-lable" for="image"><?php echo $rowImg['name']; ?></label>
-                        </div>
-
-                        <div class="col-md-12" id="image_show">
-
-                            <img class="img_view" width="100px" src="/shop/admin/Views/img/<?php echo $rowImg['name']; ?>" class="thumbnail" alt="<?php echo $rowImg['name']; ?>">
-
-                        </div>
+                    <label class="custom-file-lable" for="image"><?php echo $rowImg['name']; ?></label>
                     <?php } ?>
                 <?php } ?>
+                </div>
+
+                <div class="col-md-12" id="image_show">
+                <?php foreach ($img as $rowImg) { ?>
+                    <?php if ($Led['id'] == $rowImg['led_id']) { ?>
+                    <img class="img_view" width="100px" src="/shop/admin/Views/img/<?php echo $rowImg['name']; ?>" class="thumbnail" alt="<?php echo $name; ?>">
+                    <?php } ?>
+                <?php } ?>
+                </div>
             </div>
 
             <div class="form-group">
@@ -52,8 +53,7 @@
                 <label for="description">Giá sản phẩm</label>
                 <input type="text" class="form-control" id="price" name="price" value="<?php if (isset($Led["price"])) echo $Led["price"]; ?>">
             </div>
-            <button type="submit" class="btn btn-success">Lưu</button>
-            <button type="reset" class="btn btn-warning">Nhập lại</button>
+            <input style="width: 120px;" type="submit" class="btn btn-primary" value="Lưu">
         </form>
     </div>
 </div>

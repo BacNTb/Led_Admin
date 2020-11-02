@@ -89,7 +89,7 @@ class AdminsController extends Controller
 
             if ($this->AdminRepository->update($Admin))
             {
-                header("Location: " . WEBROOT . "leds/index");
+                header("Location: " . WEBROOT . "admins/admin/");
             }
         }
 

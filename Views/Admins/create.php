@@ -40,8 +40,8 @@
                 <input type="tell" class="form-control" id="tell" placeholder="VD: 0977888999" name="tell">
             </div>
 
-            <input type="submit" class="btn btn-success" value="Thêm">
-            <input type="reset" class="btn btn-warning" value="Nhập lại">
+            <input style="width: 120px;" type="submit" class="btn btn-primary" value="Thêm">
+            <input style="width: 120px;" type="reset" class="btn btn-warning" value="Nhập lại">
         </form>
     </div>
 </div>

@@ -8,6 +8,8 @@ use Mvc\Models\CheckoutRepository;
 use Mvc\Models\CustommerModel;
 
 use Mvc\Models\CustommerRepository;
+use Mvc\Models\LedModel;
+use Mvc\Models\LedRepository;
 
 class CustummersController extends Controller
 {
@@ -20,9 +22,12 @@ class CustummersController extends Controller
 
     function cus($id)
     {
-        $Cus = new CustommerModel();
-        // $Cus->setId($id);
+        $newLed = new LedModel();
+        $req = new LedRepository();
+        $d['led'] = $req->showAll($newLed);
+        $this->set($d);
 
+        $Cus = new CustommerModel();
         $d['cus'] = $this->CustommerRepository->getId($id);
         $this->set($d);
 

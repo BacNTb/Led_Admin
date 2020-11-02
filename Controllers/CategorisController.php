@@ -6,6 +6,8 @@ use Mvc\Core\Controller;
 use Mvc\Models\CateModel;
 
 use Mvc\Models\CateRepository;
+use Mvc\Models\LedModel;
+use Mvc\Models\LedRepository;
 
 class CategorisController extends Controller
 {
@@ -20,6 +22,11 @@ class CategorisController extends Controller
     {
         $newCate = new CateModel();
         $d['cate'] = $this->CateRepository->showAll($newCate);
+        $this->set($d);
+
+        $newLed = new LedModel();
+        $req = new LedRepository();
+        $d['led'] = $req->showAll($newLed);
         $this->set($d);
 
         if($page == 'home') {

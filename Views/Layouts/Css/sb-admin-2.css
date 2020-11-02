@@ -342,6 +342,13 @@ progress {
   -webkit-appearance: button;
 }
 
+.custom-file-lable {
+  margin-left: 20px; 
+  background-color: #eaeaea; 
+  padding: 0 6px; 
+  border-radius: 4px;
+}
+
 output {
   display: inline-block;
 }
@@ -4831,7 +4838,7 @@ input[type="button"].btn-block {
 .badge {
   display: inline-block;
   padding: 0.25em 0.4em;
-  font-size: 75%;
+  font-size: 13px;
   font-weight: 700;
   line-height: 1;
   text-align: center;
@@ -4861,9 +4868,8 @@ a.badge:hover, a.badge:focus {
 }
 
 .badge-pill {
-  padding-right: 0.6em;
-  padding-left: 0.6em;
-  border-radius: 10rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5rem;
 }
 
 .badge-primary {

@@ -28,8 +28,7 @@
                 <label for="description">Số điện thoại</label>
                 <input type="text" class="form-control" id="tell" name="tell" value="<?php if (isset($Admin["tell"])) echo $Admin["tell"]; ?>">
             </div>
-            <button type="submit" class="btn btn-success">Lưu</button>
-            <button type="reset" class="btn btn-warning">Nhập lại</button>
+            <button style="width: 120px;" type="submit" class="btn btn-primary">Lưu</button>
         </form>
     </div>
 </div>
