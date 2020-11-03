@@ -75,7 +75,7 @@ class AdminsController extends Controller
 
     function edit($id)
     {
-        $Admin= new AdminModel();
+        $Admin = new AdminModel();
         $Admin->setId($id);
 
         if (isset($_POST["name"]))
@@ -93,7 +93,7 @@ class AdminsController extends Controller
             }
         }
 
-        $d["Admin"] = $this->AdminRepository->getId($id);
+        $d["admin"] = $this->AdminRepository->getId($id);
 
         $this->set($d);
         $this->render("edit");
@@ -120,6 +120,12 @@ class AdminsController extends Controller
                 $_SESSION['img'] = $resuft['img'];
                 
                 header('Location: /shop/admin/leds/index');
+            } else {
+                $d['message'] = 'Tài khoản hoặc mật khẩu không chính xác!';
+                $this->set($d);
+
+                $d['login'] = 'Đăng nhập lại';
+                $this->set($d);
             }
             
         }

@@ -1,29 +1,36 @@
-<div class="card">
-    <div class="card-header text-danger">Đăng nhập để tiếp tục !</div>
 
-    <div class="login-panel panel panel-default login">
-        <div class="panel-headingg text-center title-login text-danger mt-3">Đăng nhập</div>
-        <div class="panel-body" style="width: 400px; margin: 20px auto;     border: 1px solid #dedede; padding: 20px 30px; border-radius: 5px;">
-
-            <form action="#" method="post">
-                <fieldset>
-                    <div class="form-group">
-                        <input class="form-control" placeholder="Tài khoản" name="username" type="text">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" placeholder="Mật khẩu" name="password" type="password">
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                            <input name="remember" type="checkbox" value="Remember Me">Nhớ mật khẩu !
-                        </label>
-                    </div>
-                    <div class="form-group form-submit">
-                        <input type="submit" class="btn btn-primary" name="submit" value="Đăng nhâp">
-                        <a href="">Quên mật khẩu ?</a>
-                    </div>
-                </fieldset>
-            </form>
-        </div>
-    </div>
+<div class="center-container">
+	<div class="header-w3l">
+		<h1>Trang Đăng Nhập</h1>
+		<?php if(isset($message)) { ?>
+			<h4><?php echo $message;?></h4> 
+		<?php } ?>
+	</div>
+	<div class="main-content-agile">
+		<div class="sub-main-w3">	
+			<div class="wthree-pro">
+			<?php if(isset($login)) { ?>
+				<h2 class="login-false"><?php echo $login;?></h2> 
+			<?php } else { ?>
+				<h2>Đăng Nhập</h2>
+			<?php } ?>
+			</div>
+			<form action="#" method="post">
+				<div class="pom-agile">
+					<input class="user" placeholder="Tài khoản" name="username" type="text" required="">
+					<span class="icon1"><i class="fa fa-user" aria-hidden="true"></i></span>
+				</div>
+				<div class="pom-agile">
+					<input class="pass" placeholder="Mật khẩu" name="password" type="password" required="">
+					<span class="icon2"><i class="fa fa-unlock" aria-hidden="true"></i></span>
+				</div>
+				<div class="sub-w3l">
+					<h6 style="margin-right: 32px;"><a href="#">Quên mật khẩu?</a></h6>
+					<div class="right-w3l">
+						<input type="submit" name="submit" value="Đăng nhâp">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 </div>

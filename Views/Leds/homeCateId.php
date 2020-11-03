@@ -1,5 +1,5 @@
 <div class="card">
-    <h5 class="card-header">Danh sách sản phẩm theo danh mục</h5>
+    <h5 class="card-header text-primary">Danh sách sản phẩm theo danh mục</h5>
     <div class="card-body">
         <!-- <div>
             <a href="/admin/leds/create/" class="btn btn-primary btn-xs">
@@ -11,7 +11,7 @@
         <div class="row">
             <?php foreach ($cate as $row) { ?>
                 <div class="col-md-3 mt-3">
-                    <a href="/shop/admin/leds/homecateid/<?php echo $row['id']; ?>" class="btn btn-outline-info btn-xs w-100">
+                    <a href="/shop/admin/leds/homecateid/<?php echo $row['id']; ?>" class="btn btn-outline-primary btn-xs w-100">
                         <?php echo $row['name']; ?>
                     </a>
                 </div>

@@ -7690,7 +7690,7 @@ button.bg-dark:focus {
 
 .mr-2,
 .mx-2 {
-  margin-right: 0.5rem !important;
+  margin-right: 0.6rem !important;
 }
 
 .mb-2,
@@ -9993,10 +9993,6 @@ a:focus {
 
 .text-gray-500 {
   color: #b7b9cc !important;
-}
-
-.text-gray-600 {
-  color: #858796 !important;
 }
 
 .text-gray-700 {

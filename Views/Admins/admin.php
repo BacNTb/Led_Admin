@@ -1,5 +1,5 @@
 <div class="card">
-    <h5 class="card-header">Danh sách Admin</h5>
+    <h5 class="card-header text-primary">Danh sách Admin</h5>
     <div class="card-body">
         <a href="/shop/admin/admins/admin/home" class="btn btn-info btn-sm">Trở lại</a>
         <table class="table table-hover table-product table-product mt-3 text-center">

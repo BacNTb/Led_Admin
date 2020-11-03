@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,26 +12,24 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
     <link href="/shop/admin/views/layouts/css/sb-admin-2.css" rel="stylesheet">
-    <!-- <link href="/shop/admin/views/layouts/css/default.css" rel="stylesheet"> -->
+    <link href="/shop/admin/views/layouts/css/default.css" rel="stylesheet">
 
-    <style>
-        table tr th {
-            position: sticky;
-            top: 68px;
-            z-index: 1;
-        }
-
-        .img_view {
-            width: 100px;
-            object-fit: cover;
-            margin: 0 15px 15px 0;
-            height: 100px;
-        }
-    </style>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+    function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Meta tag Keywords -->
+    <!-- css files -->
+    <link rel="stylesheet" href="/shop/admin/views/layouts/css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
+    <link rel="stylesheet" href="/shop/admin/views/layouts/css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+    <!-- //css files -->
+    <!-- online-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
+    <!-- //online-fonts -->
 
 </head>
-
+<?php if (isset($_SESSION['username'])) { ?>
 <body id="page-top">
+
     <div class="conten">
         <div class="row">
             <div class="col-md-2 conten-nav position-relative">
@@ -276,11 +273,10 @@
                             <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                                        <?php if (isset($_SESSION['username'])) {
-                                            echo $_SESSION['name'];
-                                        } ?></span>
-                                    <img class="img-profile rounded-circle" src="/shop/admin/views/imgadmin/<?php if (isset($_SESSION['username'])) {echo $_SESSION['img'];} ?>">
+                                    <span class="mr-2 d-none d-lg-inline small text-primary">
+                                            <?php echo $_SESSION['name'];?>
+                                    </span>
+                                    <img class="img-profile rounded-circle" src="/shop/admin/views/imgadmin/<?php echo $_SESSION['img'];?>">
                                 </a>
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -315,6 +311,8 @@
     </div>
 
 
+
+
     <!-- JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -324,7 +322,12 @@
     <!-- JS Only  -->
     <script src="/shop/admin/views/layouts/js/js.js"></script>
     <script src="https://kit.fontawesome.com/yourcode.js"></script>
-
+    
 </body>
+<?php } else { ?>
+<?php
+    echo '<body id="login">' . $content_for_layout . '</body>';
+?>
+<?php } ?>
 
 </html>

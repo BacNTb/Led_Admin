@@ -1,5 +1,5 @@
 <div class="card">
-    <h5 class="card-header">Danh sách sản phẩm</h5>
+    <h5 class="card-header text-primary">Danh sách sản phẩm</h5>
     <div class="card-body">
         <div class="div-link">
             <a href="/shop/admin/leds/create/" class="btn btn-primary btn-xs">

@@ -1,5 +1,5 @@
 <div class="card">
-    <h5 class="card-header">Trang chủ</h5>
+    <h5 class="card-header text-primary">Trang chủ</h5>
     <div class="card-body row">
 
         <div class="col-xl-3 col-md-6 mb-4">
