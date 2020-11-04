@@ -34,7 +34,17 @@ class ResourceModel implements ResourceModelInterFace
             $keyx = "";
 
             foreach ($arr as $key => $value) {
-                if($key != "id" && $key != "create_at") {
+                if($table == 'image') {
+                    if($key != "id" && $key != "update_at") {
+                        $values .= "$key = :$key ,";
+
+                        $keyx .= "$key ,";
+                        $valuex .= "'$value' ,";
+
+                        $newArr[$key] = $value;
+                    }
+
+                } elseif($key != "id" && $key != "create_at") {
                     $values .= "$key = :$key ,";
 
                     $keyx .= "$key ,";
