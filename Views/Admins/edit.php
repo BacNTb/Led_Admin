@@ -1,5 +1,15 @@
 <div class="card">
-    <h5 class="card-header text-primary">Sửa Thông Tin Admin  -  <?php if (isset($admin["name"])) echo $admin["name"]; ?></h5>
+    <h5 class="card-header text-danger">
+        Sửa Thông Tin Admin  -  
+        <?php 
+            if(isset($admin["name"])) { 
+                echo $admin["name"]; 
+            }
+            if(isset($message)) {
+                echo ' - ' . $message;        
+            }
+        ?>
+    </h5>
     <div class="card-body">
         <a href="/shop/admin/admins/admin/" class="btn btn-info btn-sm" style="margin-bottom: 20px">Trở lại</a>
 
@@ -13,11 +23,11 @@
                 <div class="form-group col-md-12">
                     <label for="image">Ảnh Admin</label>
                     <input style="display: none;" multiple type="file" id="image" class="custom-file-input" name="image[]" required="">
-                    <label class="custom-file-lable" for="image"><?php echo $admin['img']; ?></label>
+                    <label class="custom-file-lable" for="image">Chọn ảnh</label>
                 </div>
 
                 <div class="col-md-12" id="image_show">
-                    <img class="img_view" width="100px" src="/shop/admin/Views/imgadmin/<?php echo $admin['img']; ?>" class="thumbnail" alt="<?php echo $admin['img']; ?>">
+                    <!-- <img class="img_view" width="100px" src="/shop/admin/Views/imgadmin/<?php echo $admin['img']; ?>" class="thumbnail" alt="<?php echo $admin['img']; ?>"> -->
                 </div>
             </div>
 
@@ -28,7 +38,12 @@
 
             <div class="form-group">
                 <label for="title">Mật khẩu</label>
-                <input type="text" class="form-control" id="password" name="password" value="<?php if (isset($admin["password"])) echo $admin["password"]; ?>" required="">
+                <input type="password" class="form-control" id="password" name="password" value="<?php if (isset($admin["password"])) echo $admin["password"]; ?>" required="">
+            </div>
+
+            <div class="form-group">
+                <label for="title">Nhập lại mật khẩu </label>
+                <input type="password" class="form-control" id="repassword" value="<?php if (isset($admin["password"])) echo $admin["password"]; ?>" name="repassword" required="">
             </div>
 
             <div class="form-group">

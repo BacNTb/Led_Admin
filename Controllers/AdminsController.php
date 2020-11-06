@@ -34,40 +34,52 @@ class AdminsController extends Controller
     function create()
     {
         if (isset($_POST["name"])) {
+            $pass = $_POST['password'];
+            $repass = $_POST['repassword'];
+
+            if($pass == $repass) {
+
+                if (isset($_FILES["image"])) {
+                                    
+                    $fileUpload = $_SERVER['DOCUMENT_ROOT'] . '/shop/Admin/Views/Imgadmin/';
+    
+                    $file = $_FILES["image"]['name'];
+                    $tmp = $_FILES["image"]["tmp_name"];
+    
+                    $filename = implode($file);
+                    $tmpname = implode($tmp);
+    
+                    if ($filename == UPLOAD_ERR_OK && $filename != '') {
+    
+                        $tmp_name = $tmpname;
+                        $name = basename($filename);
+                        move_uploaded_file($tmp_name, "$fileUpload/$name");
+    
+                        $Admin= new AdminModel();
+                        $Admin->setName($_POST["name"]);
+                        $Admin->setImg($name);
+                        $Admin->setUsername($_POST["username"]);
+                        $Admin->setPassword(sha1($_POST["password"]));
+                        $Admin->setEmail($_POST["email"]);
+                        $Admin->setTell($_POST["tell"]);
+                        $Admin->setCreate_at(date("Y-m-d h:i:s"));
             
-            if (isset($_FILES["image"])) {
-                                
-                $fileUpload = $_SERVER['DOCUMENT_ROOT'] . '/shop/admin/views/imgadmin/';
+                        if ($this->AdminRepository->add($Admin)) {
+            
+                            header("Location: " . WEBROOT . "Admins/admin/");
+                        }
 
-                $file = $_FILES["image"]['name'];
-                $tmp = $_FILES["image"]["tmp_name"];
-
-                $filename = implode($file);
-                $tmp_name = implode($tmp);
-
-                if ($filename == UPLOAD_ERR_OK) {
-
-                    $tmp_name = $tmp_name;
-                    $name = basename($filename);
-                    move_uploaded_file($tmp_name, "$fileUpload/$name");
-
-                    $Admin= new AdminModel();
-                    $Admin->setName($_POST["name"]);
-                    $Admin->setImg($name);
-                    $Admin->setUsername($_POST["username"]);
-                    $Admin->setPassword(sha1($_POST["password"]));
-                    $Admin->setEmail($_POST["email"]);
-                    $Admin->setTell($_POST["tell"]);
-                    $Admin->setCreate_at(date("Y-m-d h:i:s"));
-        
-                    if ($this->AdminRepository->add($Admin)) {
-        
-                        header("Location: " . WEBROOT . "admins/admin/");
+                    } else {
+                        $d["message"] = 'Thông báo * Hãy thêm ảnh Admin';
+    
                     }
-                }
-            } else {
+                } 
 
+            } else {
+                $d["message"] = 'Thông báo * Mật khẩu không trùng khớp';
             }
+
+            $this->set($d);
         }
 
         $this->render("create");
@@ -78,19 +90,54 @@ class AdminsController extends Controller
         $Admin = new AdminModel();
         $Admin->setId($id);
 
-        if (isset($_POST["name"]))
-        {
-            $Admin->setName($_POST["name"]);
-            $Admin->setUsername($_POST["username"]);
-            $Admin->setPassword(sha1($_POST["password"]));
-            $Admin->setEmail($_POST["email"]);
-            $Admin->setTell($_POST["tell"]);
-            $Admin->setUpdate_at(date("Y-m-d h:i:s"));
+        if (isset($_POST["name"])) {
 
-            if ($this->AdminRepository->update($Admin))
-            {
-                header("Location: " . WEBROOT . "admins/admin/");
+            $pass = $_POST['password'];
+            $repass = $_POST['repassword'];
+
+            if($pass == $repass) {
+
+                if (isset($_FILES["image"])) {
+                                        
+                    $fileUpload = $_SERVER['DOCUMENT_ROOT'] . '/shop/Admin/Views/Imgadmin/';
+        
+                    $file = $_FILES["image"]['name'];
+                    $tmp = $_FILES["image"]["tmp_name"];
+        
+                    $filename = implode($file);
+                    $tmpname = implode($tmp);
+        
+                    if ($filename == UPLOAD_ERR_OK && $filename != '') {
+                  
+                        $tmp_name = $tmpname;
+                        $name = basename($filename);
+                        move_uploaded_file($tmp_name, "$fileUpload/$name");
+        
+                        $Admin= new AdminModel();
+                        $Admin->setId($id);
+        
+                        $Admin->setName($_POST["name"]);
+                        $Admin->setImg($name);
+                        $Admin->setUsername($_POST["username"]);
+                        $Admin->setPassword(sha1($_POST["password"]));
+                        $Admin->setEmail($_POST["email"]);
+                        $Admin->setTell($_POST["tell"]);
+                        $Admin->setUpdate_at(date("Y-m-d h:i:s"));
+            
+                        if ($this->AdminRepository->update($Admin)) {
+            
+                            header("Location: " . WEBROOT . "Admins/admin/");
+                        }
+
+                    } else {
+                        $d["message"] = 'Thông báo * Hãy thêm ảnh Admin';
+    
+                    }
+                }         
+            } else {
+                $d["message"] = 'Thông báo * Mật khẩu không trùng khớp';
             }
+            $this->set($d);
         }
 
         $d["admin"] = $this->AdminRepository->getId($id);

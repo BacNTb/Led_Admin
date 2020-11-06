@@ -1,5 +1,10 @@
 <div class="card">
-    <h5 class="card-header text-primary">Thêm Admin</h5>
+    <h5 class="card-header text-danger">
+        Thêm Admin - <?php if(isset($message)) {
+            echo $message;
+            
+        }?>
+    </h5>
     <div class="card-body">
         <a href="/shop/admin/admins/admin/home" class="btn btn-info btn-sm" style="margin-bottom: 20px">Trở lại</a>
 
@@ -12,7 +17,7 @@
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="image">Ảnh Admin</label>
-                    <input style="display: none;" type="file" id="image" class="custom-file-input" name="image[]" required="">
+                    <input style="display: none;" type="file" id="image" class="custom-file-input" name="image[]">
                     <label class="custom-file-lable" for="image">Chọn ảnh</label>
                 </div>
                 <div class="col-md-12" id="image_show">
@@ -27,7 +32,12 @@
 
             <div class="form-group">
                 <label for="title">Mật khẩu </label>
-                <input type="password" class="form-control" id="password" placeholder="VD: 123456789" name="password" required="">
+                <input type="password" class="form-control" id="password" placeholder="VD: *******" name="password" required="">
+            </div>
+
+            <div class="form-group">
+                <label for="title">Nhập lại mật khẩu </label>
+                <input type="password" class="form-control" id="repassword" placeholder="VD: *******" name="repassword" required="">
             </div>
 
             <div class="form-group">

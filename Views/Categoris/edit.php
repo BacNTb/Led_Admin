@@ -1,5 +1,5 @@
 <div class="card">
-    <h5 class="card-header text-primary">Sửa Thông Tin Danh Mục</h5>
+    <h5 class="card-header text-danger">Sửa Thông Tin Danh Mục</h5>
     <div class="card-body">
         <a href="/shop/admin/categoris/cate/" class="btn btn-info btn-sm" style="margin-bottom: 20px">Trở lại</a>
 

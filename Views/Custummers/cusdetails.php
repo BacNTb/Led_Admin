@@ -1,6 +1,6 @@
 
 <div class="card">
-    <h5 class="card-header text-primary">Khách hàng  - <?php echo $cus['name']; ?></h5>
+    <h5 class="card-header text-danger">Khách hàng  - <?php echo $cus['name']; ?></h5>
     <div class="card-body">
         <a href="/shop/admin/custummers/home/" class="btn btn-info btn-sm" style="margin-bottom: 20px;">Trở lại</a>
         <table class="table table-hover table-product table-product text-center table-responsive-sm">

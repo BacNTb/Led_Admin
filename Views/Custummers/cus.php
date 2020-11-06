@@ -1,5 +1,5 @@
 <div class="card">
-    <h5 class="card-header text-primary">Thông Tin Khách Hàng</h5>
+    <h5 class="card-header text-danger">Thông Tin Khách Hàng</h5>
     <div class="card-body">
         <table class="table table-hover table-product table-product text-center">
             <thead>

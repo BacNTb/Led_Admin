@@ -1,5 +1,5 @@
 <div class="card">
-    <h5 class="card-header text-primary">Danh sách khách hàng</h5>
+    <h5 class="card-header text-danger">Danh sách khách hàng</h5>
     <div class="card-body">
 
         <ul class="list-group mt-3">

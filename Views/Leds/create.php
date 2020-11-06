@@ -1,6 +1,6 @@
 
 <div class="card">
-    <h5 class="card-header text-primary">Thêm Đèn Led</h5>
+    <h5 class="card-header text-danger">Thêm Đèn Led</h5>
     <div class="card-body">
         <a href="/shop/admin/leds/home/" class="btn btn-info btn-sm" style="margin-bottom: 20px;">Trở lại</a>
 

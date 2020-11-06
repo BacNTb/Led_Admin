@@ -1,5 +1,5 @@
 <div class="card">
-    <h5 class="card-header text-primary">Danh Sách Danh Mục</h5>
+    <h5 class="card-header text-danger">Danh Sách Danh Mục</h5>
     <div class="card-body">
         <div>
             <a href="/shop/admin/categoris/create/" class="btn btn-primary btn-xs">
